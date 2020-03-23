@@ -1,20 +1,22 @@
 class EntitiesController < ApplicationController
     def index
+        entities = Entity.all
+        render json: entities
     end
 
     def show
-    end
-
-    def new
+        entity = Entity.find_by(id: params[:id])
+        render json: entity
     end
 
     def create
-    end
-
-    def update
+        entity = Entity.create(entity_params)
+        render json: entity
     end
 
     def destroy
+        entity = Entity.find(params[:id])
+        entity.destroy
     end
 
     private
