@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_03_10_235302) do
 
   create_table "clients", force: :cascade do |t|
-    t.string "name"
-    t.string "vip"
+    t.string "name", null: false
+    t.string "gender"
+    t.string "vip", default: "standard"
     t.string "city"
     t.string "state"
     t.string "twitter"
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_10_235302) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
+    t.string "gender"
     t.string "industry"
     t.text "description"
     t.text "services"
