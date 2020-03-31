@@ -9,6 +9,10 @@ class EntitiesController < ApplicationController
         render json: entity
     end
 
+    def new
+        @entity = Entity.new
+    end
+
     def create
         entity = Entity.create(entity_params)
         render json: entity
