@@ -9,6 +9,10 @@ class ClientsController < ApplicationController
         render json: client
     end
 
+    def new
+        @client = Client.new
+    end
+
     def create
         client = Client.create(client_params)
         render json: client
